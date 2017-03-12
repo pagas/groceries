@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
 
     constructor(private router: Router, private userService: UserService, private page: Page) {
         this.user = new User();
-        this.user.email = "ptest@test.com";
-        this.user.password = "test";
+        this.user.email = "user@nativescript.org";// "ptest@test.com";
+        this.user.password = "password"; // "test";
     }
     ngOnInit() {
         this.page.actionBarHidden = true;
