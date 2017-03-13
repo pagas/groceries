@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     constructor(private router: Router, private userService: UserService, private page: Page) {
         this.user = new User();
         this.user.email = "ptest@test.com"; // "user@nativescript.org";
-        this.user.password =  "test"; //"password";
+        this.user.password = "test"; //"password";
     }
     ngOnInit() {
         this.page.actionBarHidden = true;
@@ -31,6 +31,10 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
+        if (!this.user.isValidEmail()) {
+            alert("Enter a valid email address.");
+            return;
+        }
         if (this.isLoggingIn) {
             this.login();
         } else {
